@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Memory Game - {{ level.capitalize() }} Level</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="playing {{ level }}">
+    <!-- Display the game level -->
+    <h1>Card Memory Game - {{ level.capitalize() }} Level</h1>
+    <!-- Display the game timer -->
+    <div id="game-info">
+        <p>Time: <span id="time">45</span> seconds</p>
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="countdown-bar-container">
+            <div id="countdown-bar" class="countdown-bar"></div>
+        </div>
+    </div>
+    <!-- Display the game over message -->
+    <div id="game-over-message" class="hidden">
+        <h2>Time is up! Game over.</h2>
+        <button onclick="restartGame()">Try Again</button>
+        <button onclick="backToLevelSelection()">Back to Level Selection</button>
+    </div>
+    <!-- Display the win message -->
+    <div id="win-message" class="hidden">
+        <h2>Congratulations! You matched all of the cards!!!.</h2>
+        <button onclick="nextLevel()">Next Level</button>
+    </div>
+    <!-- Container for the game cards -->
+    <div id="game-board-container">
+        <div id="game-board">
+            <!-- Cards will be dynamically generated here -->
+        </div>
+    </div>
+    <!-- Pass the game level to the JavaScript code -->
+    <script>
+        const level = "{{ level }}";
+        function restartGame() {
+            window.location.href = `/play/${level}`;
+        }
+        function backToLevelSelection() {
+            window.location.href = '/cardmemory';
+        }
+        function nextLevel() {
+            const levels = ['easy', 'medium', 'hard', 'god'];
+            const currentIndex = levels.indexOf(level);
+            if (currentIndex === levels.length - 1) {
+                window.location.href = '/';
+            } else {
+                const nextLevel = levels[currentIndex + 1];
+                window.location.href = `/play/${nextLevel}`;
+            }
+        }
+    </script>
+    <!-- Link to the JavaScript file -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

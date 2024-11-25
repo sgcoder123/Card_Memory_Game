@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Memory Game</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Main heading of the page -->
+    <h1>Card Memory Game</h1>
+    <!-- Add a fun description -->
+    <div class="description-box">
+        <p class="description">Test your memory skills with this fun and challenging card game! Choose a level and start playing.</p>
+    </div>
+    <!-- Form to select the game level and start the game -->
+    <form id="level-form" action="{{ url_for('start') }}" method="post">
+        <!-- Containers to select each level -->
+        <div class="level-container vertical">
+            <div class="level-box">
+                <input type="radio" name="level" value="easy" id="easy" class="level-input">
+                <label for="easy" class="level-label">
+                    <div class="Easy">
+                        <p>Easy</p>
+                    </div>
+                </label>
+            </div>
+            <div class="level-box">
+                <input type="radio" name="level" value="medium" id="medium" class="level-input">
+                <label for="medium" class="level-label">
+                    <div class="Medium">
+                        <p>Medium</p>
+                    </div>
+                </label>
+            </div>
+            <div class="level-box">
+                <input type="radio" name="level" value="hard" id="hard" class="level-input">
+                <label for="hard" class="level-label">
+                    <div class="Hard">
+                        <p>Hard</p>
+                    </div>
+                </label>
+            </div>
+            <div class="level-box">
+                <input type="radio" name="level" value="god" id="god" class="level-input">
+                <label for="god" class="level-label">
+                    <div class="God">
+                        <p>God</p>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <!-- Button to submit the form and start the game -->
+        <button type="submit" class="btn btn-primary">Start Game</button>
+    </form>
+</body>
+</html>
