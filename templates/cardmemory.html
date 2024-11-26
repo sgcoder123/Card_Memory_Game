@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary" style="position: absolute; top: 20px; left: 20px;">Back to Hub</a>
     <!-- Main heading of the page -->
     <h1>Card Memory Game</h1>
     <!-- Add a fun description -->
@@ -16,6 +17,7 @@
     </div>
     <!-- Form to select the game level and start the game -->
     <form id="level-form" action="{{ url_for('start') }}" method="post">
+        <input type="hidden" name="game" value="cardmemory">
         <!-- Containers to select each level -->
         <div class="level-container vertical">
             <div class="level-box">

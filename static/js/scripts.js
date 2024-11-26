@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Flip the card when clicked
     function flipCard(card) {
-        if (card.classList.contains('flipped')) return;
+        if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
         card.style.transition = 'transform 0.3s'; // Increase the speed of the flip
         card.classList.add('flipped');
         const flippedCards = document.querySelectorAll('.card.flipped:not(.matched)');

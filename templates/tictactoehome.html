@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tictactoe.css') }}">
+    <style>
+        body {
+            background: linear-gradient(to right, #000000, #ffffff);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 150px;
+        }
+        h1 {
+            margin-bottom: 10px;
+            color: #ffffff;
+            background-color: #343a40;
+            border-radius: 15px;
+            border: 3px solid #ffffff;
+            padding: 15px;
+            width: fit-content;
+            margin: 20px auto;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-size: 1.5em;
+        }
+        .tic-tac-toe-levels {
+            margin-top: 50px;
+        }
+        .btn {
+            width: 150px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary" style="position: absolute; top: 20px; left: 20px;">Back to Hub</a>
+    <h1>Tic-Tac-Toe</h1>
+    <div class="container">
+        <h2>Select Difficulty Level</h2>
+        <div id="tic-tac-toe-levels" class="tic-tac-toe-levels">
+            <form action="{{ url_for('start') }}" method="post">
+                <input type="hidden" name="game" value="tictactoe">
+                <button id="easy-level" type="submit" name="level" value="easy" class="btn btn-success">Easy</button>
+                <button id="hard-level" type="submit" name="level" value="hard" class="btn btn-danger">Hard</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body class="playing {{ level }}">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary" style="position: absolute; top: 20px; left: 20px;">Back to Hub</a>
     <!-- Display the game level -->
     <h1>Card Memory Game - {{ level.capitalize() }} Level</h1>
     <!-- Display the game timer -->
@@ -41,8 +42,9 @@
     <!-- Pass the game level to the JavaScript code -->
     <script>
         const level = "{{ level }}";
+        const game = "cardmemory";
         function restartGame() {
-            window.location.href = `/play/${level}`;
+            window.location.href = `/play/${game}/${level}`;
         }
         function backToLevelSelection() {
             window.location.href = '/cardmemory';
@@ -54,7 +56,7 @@
                 window.location.href = '/';
             } else {
                 const nextLevel = levels[currentIndex + 1];
-                window.location.href = `/play/${nextLevel}`;
+                window.location.href = `/play/${game}/${nextLevel}`;
             }
         }
     </script>

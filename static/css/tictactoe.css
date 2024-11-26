@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(to right, #000000, #ffffff);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 70px; /* Move the container lower */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    margin-bottom: 30px; /* Increase margin-bottom */
+    color: #ffffff;
+    background-color: #343a40;
+    border-radius: 15px;
+    border: 3px solid #ffffff; /* Add border */
+    padding: 15px;
+    width: fit-content;
+    align-items: center;
+    margin: 0 auto; /* Center the header container */
+    margin-top: 0; /* Move the header lower */
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Reduce gap for closer spacing */
+    margin-bottom: 10px; /* Reduce margin-bottom */
+    position: relative;
+}
+
+.tic-tac-toe-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px; /* Increase grid gap for better spacing */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: fit-content;
+    margin-top:10px; /* Move the board lower */
+}
+
+.tic-tac-toe-cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    border: 2px solid #343a40;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tic-tac-toe-cell:hover {
+    background-color: #e9ecef;
+    transform: scale(1.05);
+}
+
+.tic-tac-toe-status {
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #343a40;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    margin: 0; /* Remove margin */
+    position: absolute;
+    top: 50%; /* Move the status lower */
+    right: 60px; /* Adjust the position to the right side of the board */
+    transform: translateY(-50%);
+}
+
+#tic-tac-toe-restart {
+    margin-top: 10px; /* Move the button higher */
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.switch-level {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    color: #ffffff;
+    border: none;
+    margin-top: 10px; /* Add space from the "Play Another Game" button */
+}

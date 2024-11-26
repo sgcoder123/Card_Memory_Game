@@ -1,0 +1,65 @@
+/* Basic body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Darker gradient colors for better text contrast */
+    background-size: 400% 400%;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    animation: gradientAnimation 15s ease infinite; /* Smooth animation */
+}
+
+/* Animation for background gradient */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Main heading styling */
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Game link button styling */
+.game-link {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.game-link:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styling for better aesthetics */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    .game-link {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}

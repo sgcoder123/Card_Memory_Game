@@ -6,32 +6,13 @@
     <title>Home Page</title>
     <!-- Link to Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .game-link {
-            display: block;
-            margin: 20px auto;
-            padding: 10px;
-            border: 1px solid #000;
-            text-decoration: none;
-            color: #000;
-            border-radius: 5px;
-            width: 200px;
-        }
-        .game-link:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to SG's Mini Game Hub</h1>
-        <a href="{{ url_for('cardmemory') }}" class="game-link btn btn-primary">Card Memory Game</a>
-        <!-- Add more game links here -->
-    </div>
+    <h1>Welcome to SG's Mini Game Hub</h1>
+    <a href="{{ url_for('cardmemory') }}" class="game-link btn btn-primary">Card Memory Game</a>
+    <br> <!-- Add a line break to move the Tic-Tac-Toe button under the Card Memory Game button -->
+    <a href="{{ url_for('tictactoehome') }}" class="game-link btn btn-primary">Tic-Tac-Toe</a>
+    <!-- Add more game links here -->
 </body>
 </html>
