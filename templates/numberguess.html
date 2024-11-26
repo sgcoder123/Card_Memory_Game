@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/numberguess.css') }}">
+</head>
+<body>
+    <h1>Guess the Number Game</h1>
+    <form onsubmit="event.preventDefault(); checkGuess();">
+        <label for="guess">Enter your guess:</label>
+        <input type="text" id="guess" required>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <a href="/">Back to Mini Game Hub</a>
+</body>
+</html>

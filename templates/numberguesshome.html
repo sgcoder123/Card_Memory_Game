@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guess Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/numberguess.css') }}">
+</head>
+<body>
+    <h1>Choose Difficulty Level</h1>
+    <a href="{{ url_for('numberguess', level='easy') }}" class="btn btn-primary">Easy</a>
+    <a href="{{ url_for('numberguess', level='medium') }}" class="btn btn-primary">Medium</a>
+    <a href="{{ url_for('numberguess', level='hard') }}" class="btn btn-primary">Hard</a>
+</body>
+</html>

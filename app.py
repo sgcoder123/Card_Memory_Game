@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for
 
 app = Flask(__name__)
 
@@ -22,6 +22,17 @@ def tictactoehome():
 def tictactoe():
     level = request.args.get('level', 'easy')
     return render_template('tictactoe.html', level=level)
+
+# Route for the number guessing game home page
+@app.route('/numberguesshome')
+def numberguesshome():
+    return render_template('numberguesshome.html')
+
+# Route for the number guessing game with difficulty level
+@app.route('/numberguess')
+def numberguess():
+    level = request.args.get('level', 'easy')
+    return render_template('numberguess.html', level=level)
 
 # Route to start the game, redirects to the play route with the selected level
 @app.route('/start', methods=['POST'])
