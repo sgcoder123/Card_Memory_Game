@@ -10,9 +10,11 @@
 </head>
 <body>
     <h1>Welcome to SG's Mini Game Hub</h1>
+    <img src="{{ url_for('static', filename='images/mini_game_hub.png') }}" alt="Logo" class="index-image" style="width: 20%; height: auto;">
     <a href="{{ url_for('cardmemory') }}" class="game-link btn btn-primary">Card Memory Game</a>
     <br> <!-- Add a line break to move the Tic-Tac-Toe button under the Card Memory Game button -->
     <a href="{{ url_for('tictactoehome') }}" class="game-link btn btn-primary">Tic-Tac-Toe</a>
     <!-- Add more game links here -->
+     <h3>More games will come soon!!!</h3>
 </body>
 </html>

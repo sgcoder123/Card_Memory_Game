@@ -26,6 +26,17 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Image styling */
+.index-image {
+    width: 20%; /* Adjust the size as needed */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border: 5px solid #007bff; /* Add a border */
+}
+
 /* Game link button styling */
 .game-link {
     display: inline-block;
