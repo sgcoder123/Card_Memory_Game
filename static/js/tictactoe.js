@@ -3,6 +3,22 @@ let board = Array(9).fill(null);
 let currentPlayer = 'X';
 let difficulty = document.getElementById('difficulty-level').value;
 
+var music = document.getElementById('background-music');
+if (sessionStorage.getItem('music_enabled') === 'true') {
+    music.play();
+} else if (sessionStorage.getItem('music_enabled') === null) {
+    if (confirm("Do you want to enable background music?")) {
+        music.play();
+        sessionStorage.setItem('music_enabled', 'true');
+    } else {
+        sessionStorage.setItem('music_enabled', 'false');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+});
+
 function updateStatus(message = `Player ${currentPlayer}'s turn`) {
     const status = document.querySelector('.tic-tac-toe-status');
     status.textContent = message;

@@ -7,6 +7,18 @@ if (level === 'easy') {
     maxNumber = 30;
 }
 
+var music = document.getElementById('background-music');
+if (sessionStorage.getItem('music_enabled') === 'true') {
+    music.play();
+} else if (sessionStorage.getItem('music_enabled') === null) {
+    if (confirm("Do you want to enable background music?")) {
+        music.play();
+        sessionStorage.setItem('music_enabled', 'true');
+    } else {
+        sessionStorage.setItem('music_enabled', 'false');
+    }
+}
+
 function generateRandomNumber(max) {
     const array = new Uint32Array(1);
     window.crypto.getRandomValues(array);
@@ -25,6 +37,13 @@ function checkGuess() {
     const status = document.getElementById('status');
     const submitButton = document.getElementById('submit');
     attempts++;
+
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > maxNumber) {
+        message.textContent = `Please enter a valid number between 1 and ${maxNumber}.`;
+        message.style.color = 'orange';
+        attempts--; // Do not count invalid attempts
+        return;
+    }
 
     if (attempts <= maxAttempts) {
         if (userGuess == randomNumber) {
@@ -58,6 +77,10 @@ function restartGame() {
     document.getElementById('status').style.display = 'block';
     document.getElementById('submit').disabled = false;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ...existing code...
+});
 
 function nextLevel() {
     let nextLevel;

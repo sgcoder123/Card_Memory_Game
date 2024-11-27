@@ -6,6 +6,7 @@
     <title>Card Memory Game</title>
     <!-- Link to the CSS file -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <audio id="background-music" src="{{ url_for('static', filename='background.mp3') }}" autoplay loop></audio>
 </head>
 <body>
     <a href="{{ url_for('index') }}" class="btn btn-secondary" style="position: absolute; top: 20px; left: 20px;">Back to Hub</a>

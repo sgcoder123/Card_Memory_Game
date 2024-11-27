@@ -1,11 +1,18 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 # Route for the home page
 @app.route('/')
 def index():
     return render_template('home.html')
+
+# Route to set background music preference
+@app.route('/set_music_preference', methods=['POST'])
+def set_music_preference():
+    session['music_enabled'] = request.form.get('music_enabled') == 'true'
+    return redirect(url_for('index'))
 
 # Route for the card memory game start page
 @app.route('/cardmemory')
@@ -49,5 +56,5 @@ def play(game, level):
     return render_template(f'{game}_play.html', level=level)
 
 # Main function to run the Flask app
-if __name__ == '__main__': 
+if __name__ == '__main__':
     app.run(debug=True)
