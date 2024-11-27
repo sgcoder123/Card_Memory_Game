@@ -7,23 +7,40 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
+}
+/* Remove the specific styling for the back_to_hub class */
+.back_to_hub {
+    display: none;
 }
 
-.back_to_hub {
+/* Add a specific background color for the numberguesshome.html page */
+body.numberguesshome {
+    background-color: #dbdbdb; /* Light solid color */
+}
+
+body.numberguess.easy {
+    background-color: rgba(0, 128, 0, 0.7); /* Light green background */
+}
+
+body.numberguess.medium {
+    background-color: rgba(255, 165, 0, 0.7); /* Light orange background */
+}
+
+body.numberguess.hard {
+    background-color: rgba(255, 0, 0, 0.7); /* Light red background */
+}
+
+.top-left-buttons {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     color: #333;
-    margin-top: 0; /* Adjusted margin to move the header lower */
+    margin-top: 50px; /* Move the header lower */
     font-size: 2.5em;
     border-radius: 10px;
     border-color: #0056b3;
@@ -31,20 +48,28 @@ h1 {
     border-width: 5px;
     font-weight: bold;
     position: relative;
-    top: 0; /* Move the header lower */
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 form {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px; /* Adjusted margin to move the form elements lower */
+    margin-top: 5px; /* Move the form higher */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 label {
     margin-bottom: 10px;
     font-size: 1.2em;
+    color: #333;
 }
 
 input {
@@ -57,7 +82,7 @@ input {
     text-align: center;
 }
 
-button {
+button, .btn-secondary {
     padding: 10px 20px;
     font-size: 1em;
     color: #fff;
@@ -66,20 +91,19 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin: 10px 0;
+    width: auto; /* Adjust width to fit text */
+    white-space: nowrap; /* Prevent text wrapping */
 }
-
-button:hover {
+.btn-primary{
+    font-weight: bold;
+}
+button:hover, .btn-secondary:hover {
     background-color: #0056b3;
 }
 
 .btn-secondary {
     background-color: #6c757d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -88,7 +112,8 @@ button:hover {
 
 p {
     font-size: 1.2em;
-    margin-top: 20px;
+    margin-top: 10px; /* Move the paragraphs higher */
+    color: #333;
 }
 
 a {
@@ -104,6 +129,37 @@ a:hover {
 
 #status {
     font-size: 1.2em;
-    margin-top: 20px;
+    margin-top: -10px; /* Move the status higher */
     color: #333;
+}
+
+#message {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: -10px; /* Move the message higher */
+}
+
+.level-container {
+    border: 2px solid;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 5px;
+    color: white; /* Set font color to white */
+}
+
+.level-container.easy {
+    border-color: green;
+    background-color: rgba(0, 128, 0, 0.7); /* Light green background */
+}
+
+.level-container.medium {
+    border-color: orange;
+    background-color: rgba(255, 165, 0, 0.7); /* Light orange background */
+
+}
+
+.level-container.hard {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.7); /* Light red background */
 }

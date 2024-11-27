@@ -90,13 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (level === 'god') {
                     winMessage.innerHTML = `
                         <h2>Congratulations! You matched all of the cards!!!.</h2>
-                        <button onclick="restartGame()">Try Again</button>
+                        <button onclick="backToLevelSelection()">Back to Level Selection</button>
+                    `;
+                } else if (level === 'hard') {
+                    winMessage.innerHTML = `
+                        <h2>Congratulations! You matched all of the cards!!!.</h2>
                         <button onclick="backToLevelSelection()">Back to Level Selection</button>
                     `;
                 } else {
                     winMessage.innerHTML = `
                         <h2>Congratulations! You matched all of the cards!!!.</h2>
-                        <button onclick="nextLevel()">Next Level</button>
+                        <button onclick="nextLevel()" id="next-level-button">Next Level</button>
                         <button onclick="backToLevelSelection()">Back to Level Selection</button>
                     `;
                 }

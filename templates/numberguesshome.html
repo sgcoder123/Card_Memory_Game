@@ -6,12 +6,20 @@
     <title>Number Guess Home Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/numberguess.css') }}">
 </head>
-<body>
+<body class="numberguesshome">
+    <div class="top-left-buttons">
+        <a href="/" class="btn btn-secondary">Back to Game Hub</a>
+    </div>
     <h1>Guess the Number Game</h1>
     <h2>Choose Difficulty Level</h2>
-    <a href="{{ url_for('numberguess', level='easy') }}" class="btn btn-primary">Easy</a>
-    <a href="{{ url_for('numberguess', level='medium') }}" class="btn btn-primary">Medium</a>
-    <a href="{{ url_for('numberguess', level='hard') }}" class="btn btn-primary">Hard</a>
-    <a href="/" class="back_to_hub">Back to Game Hub</a>
+    <div class="level-container easy">
+        <a href="{{ url_for('numberguess', level='easy') }}" class="btn btn-primary">Easy</a>
+    </div>
+    <div class="level-container medium">
+        <a href="{{ url_for('numberguess', level='medium') }}" class="btn btn-primary">Medium</a>
+    </div>
+    <div class="level-container hard">
+        <a href="{{ url_for('numberguess', level='hard') }}" class="btn btn-primary">Hard</a>
+    </div>
 </body>
 </html>

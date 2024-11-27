@@ -6,15 +6,21 @@
     <title>Guess the Number</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/numberguess.css') }}">
 </head>
-<body>
-    <a href="/" class="back_to_hub">Back to Game Hub</a>
+<body class="numberguess {{ level }}">
+    <div class="top-left-buttons">
+        <a href="/" class="btn btn-secondary">Back to Game Hub</a>
+        <a href="{{ url_for('numberguesshome') }}" class="btn btn-secondary">Back to Level Selection</a>
+    </div>
     <h1>Guess the Number Game</h1>
     <form onsubmit="event.preventDefault(); checkGuess();">
         <label for="guess">Enter your guess:</label>
         <p id="range"></p>
         <input type="text" id="guess" required>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-        <a href="{{ url_for('numberguesshome') }}" class="btn btn-secondary">Back to Level Selection</a>
+        {% if level != 'hard' %}
+        <button type="button" onclick="nextLevel()" class="btn btn-secondary">Next Level</button>
+        {% endif %}
+        <button type="button" onclick="restartGame()" class="btn btn-secondary">Play Again</button>
     </form>
     <p id="status"></p>
     <p id="message"></p>

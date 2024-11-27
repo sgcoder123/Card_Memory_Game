@@ -6,7 +6,14 @@ if (level === 'easy') {
 } else {
     maxNumber = 30;
 }
-let randomNumber = Math.floor(Math.random() * maxNumber) + 1;
+
+function generateRandomNumber(max) {
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    return (array[0] % max) + 1;
+}
+
+let randomNumber = generateRandomNumber(maxNumber);
 let attempts = 0;
 const maxAttempts = 10;
 
@@ -40,4 +47,26 @@ function checkGuess() {
         submitButton.disabled = true;
         status.textContent = 'No attempts left.';
     }
+}
+
+function restartGame() {
+    attempts = 0;
+    randomNumber = generateRandomNumber(maxNumber);
+    document.getElementById('guess').value = '';
+    document.getElementById('message').textContent = '';
+    document.getElementById('status').textContent = `You have ${maxAttempts} attempts left.`;
+    document.getElementById('status').style.display = 'block';
+    document.getElementById('submit').disabled = false;
+}
+
+function nextLevel() {
+    let nextLevel;
+    if (level === 'easy') {
+        nextLevel = 'medium';
+    } else if (level === 'medium') {
+        nextLevel = 'hard';
+    } else {
+        nextLevel = 'easy';
+    }
+    window.location.href = `/numberguess?level=${nextLevel}`;
 }
