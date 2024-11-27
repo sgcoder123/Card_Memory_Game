@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/numberguess.css') }}">
 </head>
 <body>
+    <a href="/" class="back_to_hub">Back to Game Hub</a>
     <h1>Guess the Number Game</h1>
     <form onsubmit="event.preventDefault(); checkGuess();">
         <label for="guess">Enter your guess:</label>
+        <p id="range"></p>
         <input type="text" id="guess" required>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        <p id="staus"></p>
     </form>
     <p id="message"></p>
-    <a href="/">Back to Mini Game Hub</a>
+    <script>
+        const level = "{{ level }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/numberguess.js') }}"></script>
 </body>
 </html>

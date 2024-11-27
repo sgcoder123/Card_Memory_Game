@@ -10,6 +10,7 @@ body {
     animation: gradientAnimation 15s ease infinite; /* Smooth animation */
 }
 
+
 /* Animation for background gradient */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
