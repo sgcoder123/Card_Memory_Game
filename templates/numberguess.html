@@ -14,8 +14,9 @@
         <p id="range"></p>
         <input type="text" id="guess" required>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-        <p id="staus"></p>
+        <a href="{{ url_for('numberguesshome') }}" class="btn btn-secondary">Back to Level Selection</a>
     </form>
+    <p id="status"></p>
     <p id="message"></p>
     <script>
         const level = "{{ level }}";

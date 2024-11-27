@@ -72,6 +72,20 @@ button:hover {
     background-color: #0056b3;
 }
 
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
 p {
     font-size: 1.2em;
     margin-top: 20px;
@@ -86,4 +100,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+#status {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #333;
 }

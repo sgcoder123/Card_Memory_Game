@@ -24,14 +24,16 @@ function checkGuess() {
             message.textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
             message.style.color = 'green';
             submitButton.disabled = true;
+            status.style.display = 'none'; // Hide the status
         } else if (userGuess > randomNumber) {
             message.textContent = 'Too high! Try again.';
             message.style.color = 'red';
+            status.textContent = `You have ${maxAttempts - attempts} attempts left.`;
         } else {
             message.textContent = 'Too low! Try again.';
             message.style.color = 'red';
+            status.textContent = `You have ${maxAttempts - attempts} attempts left.`;
         }
-        status.textContent = `You have ${maxAttempts - attempts} attempts left.`;
     } else {
         message.textContent = `Sorry, you've reached the maximum number of attempts (${maxAttempts}). The number was ${randomNumber}.`;
         message.style.color = 'red';
